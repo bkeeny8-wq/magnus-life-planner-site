@@ -55,7 +55,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 
         <div class="hero-logo-wrap" aria-label="Magnus logo">
           <div class="hero-logo-glow" aria-hidden="true"></div>
-          <?php magnus_life_planner_logo_img( 'dark', 'hero-logo brand-logo--full', 'full' ); ?>
+          <?php magnus_life_planner_logo_img( 'dark', 'hero-logo brand-logo--mark', 'mark' ); ?>
         </div>
       </div>
     </section>

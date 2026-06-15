@@ -230,7 +230,7 @@ a {
 }
 
 .hero-logo-wrap {
-  min-height: 470px;
+  min-height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -239,18 +239,18 @@ a {
 
 .hero-logo-glow {
   position: absolute;
-  width: min(420px, 80%);
+  width: min(640px, 90%);
   aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(215,165,75,.24), transparent 68%);
   filter: blur(8px);
 }
 
-.hero-logo {
+.hero-logo.brand-logo--mark {
   position: relative;
   z-index: 2;
-  width: clamp(280px, 36vw, 420px);
-  height: auto;
+  width: auto;
+  height: clamp(360px, 58vw, 640px);
   filter: drop-shadow(0 28px 70px rgba(0,0,0,.45));
 }
 
@@ -569,11 +569,11 @@ a {
   }
 
   .hero-logo-wrap {
-    min-height: 360px;
+    min-height: 420px;
   }
 
-  .hero-logo {
-    width: min(320px, 78vw);
+  .hero-logo.brand-logo--mark {
+    height: min(480px, 72vw);
   }
 
   .feature-grid {
@@ -623,8 +623,8 @@ a {
     font-size: 48px;
   }
 
-  .hero-logo {
-    width: min(260px, 84vw);
+  .hero-logo.brand-logo--mark {
+    height: min(360px, 78vw);
   }
 
   .feature-grid {

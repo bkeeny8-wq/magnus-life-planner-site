@@ -20,7 +20,7 @@ function magnus_life_planner_enqueue_assets() {
 		'magnus-life-planner-style',
 		get_stylesheet_uri(),
 		array( 'magnus-google-fonts' ),
-		'1.0.4'
+		'1.0.5'
 	);
 }
 add_action( 'wp_enqueue_scripts', 'magnus_life_planner_enqueue_assets' );
