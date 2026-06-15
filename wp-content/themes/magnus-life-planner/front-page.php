@@ -5,6 +5,7 @@
  * @package Magnus_Life_Planner
  */
 
+$home_url    = esc_url( home_url( '/' ) );
 $privacy_url = esc_url( home_url( '/privacy-policy/' ) );
 $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 ?>

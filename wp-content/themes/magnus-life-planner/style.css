@@ -2,7 +2,7 @@
 Theme Name: Magnus Life Planner
 Theme URI: https://magnuslifeplanner.wordpress.com
 Description: Landing page theme for the Magnus Life Planner app.
-Version: 1.0.0
+Version: 1.0.1
 Author: Magnus Life Planner
 Author URI: https://magnuslifeplanner.wordpress.com
 Text Domain: magnus-life-planner
@@ -753,6 +753,56 @@ a {
   .site-footer {
     grid-template-columns: 1fr;
   }
+}
+
+.site-header-page {
+  position: relative;
+  background: var(--navy);
+}
+
+.page-shell {
+  padding: 72px clamp(22px, 5vw, 70px) 80px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(215,165,75,.16), transparent 36%),
+    var(--cream);
+  min-height: 60vh;
+}
+
+.page-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.page-content h1 {
+  margin: 0 0 8px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 5vw, 52px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.page-body {
+  color: var(--ink);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.page-body h2,
+.page-body h3,
+.page-body h4 {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  margin: 2rem 0 0.75rem;
+}
+
+.page-body p,
+.page-body ul,
+.page-body ol {
+  margin: 0 0 1rem;
+}
+
+.page-body a {
+  color: #8A5D14;
 }
 
 body.admin-bar .site-header {
