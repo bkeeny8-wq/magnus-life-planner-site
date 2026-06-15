@@ -1,33 +1,39 @@
-# Magnus Life Planner — GitHub Pages Site
+# Magnus Life Planner — Site
 
-This is a production-ready static landing page for Magnus.
+Landing page for Magnus, deployable to **GitHub Pages** and **WordPress.com Business**.
 
-## Files
+## Repository structure
 
-- `index.html` — main website content
-- `style.css` — visual styling and responsive layout
+```
+index.html                          # GitHub Pages (static)
+style.css                           # GitHub Pages (static)
+wp-content/themes/magnus-life-planner/
+  style.css                         # WordPress theme styles
+  front-page.php                    # Landing page template
+  index.php                         # Fallback template
+  functions.php                     # Theme setup and assets
+.deployignore                       # Files skipped on WordPress deploy
+```
 
-## How to publish with GitHub Pages
+## GitHub Pages
 
-1. Create a new GitHub repository, for example: `magnus-life-planner-site`
-2. Upload `index.html` and `style.css` to the repository root.
-3. Go to **Settings → Pages**.
-4. Under **Build and deployment**, choose:
-   - Source: `Deploy from a branch`
-   - Branch: `main`
-   - Folder: `/root`
-5. Save.
-6. GitHub will give you a public URL.
+1. Repo → **Settings** → **Pages**
+2. Source: **Deploy from a branch** → `main` → `/ (root)`
+3. Live URL: `https://bkeeny8-wq.github.io/magnus-life-planner-site/`
 
-## Current linked pages
+## WordPress.com Business
 
-Privacy Policy:
-https://magnuslifeplanner.wordpress.com/privacy-policy/
+1. [wordpress.com/sites](https://wordpress.com/sites) → your site → **Deployments**
+2. Connect `bkeeny8-wq/magnus-life-planner-site`
+3. Mode: **Simple** · Branch: `main` · Deployment: **Manual**
+4. **Trigger manual deployment** and wait for **Deployed**
+5. **Appearance** → **Themes** → activate **Magnus Life Planner**
+6. **Settings** → **Reading** → homepage can stay as default (theme handles the front page)
 
-Terms of Service:
-https://magnuslifeplanner.wordpress.com/terms-of-service/
+Root `index.html` and `style.css` are excluded from WordPress deploy via `.deployignore`.
 
-Support email:
-bkeeny8@gmail.com
+## Linked pages
 
-You can update these in `index.html` later when you have a permanent support email or domain.
+- Privacy Policy: `/privacy-policy/`
+- Terms of Service: `/terms-of-service/`
+- Support: bkeeny8@gmail.com
