@@ -23,14 +23,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Magnus home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 100 100" role="img">
-          <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="4"/>
-          <path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="currentColor"/>
-          <path d="M50 22 L54 44 L78 50 L54 56 L50 78 L46 56 L22 50 L46 44 Z" fill="#081832"/>
-        </svg>
-      </span>
-      <span>Magnus</span>
+      <?php magnus_life_planner_logo_img( 'dark', 'brand-logo' ); ?>
     </a>
 
     <nav class="nav-links" aria-label="Main navigation">
@@ -214,11 +207,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 
     <section class="cta-band">
       <div class="cta-mark" aria-hidden="true">
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="4"/>
-          <path d="M50 8 L60 42 L92 50 L60 58 L50 92 L40 58 L8 50 L40 42 Z" fill="currentColor"/>
-          <path d="M50 20 L54 44 L80 50 L54 56 L50 80 L46 56 L20 50 L46 44 Z" fill="#081832"/>
-        </svg>
+        <?php magnus_life_planner_logo_img( 'light', 'cta-logo' ); ?>
       </div>
       <div>
         <h2>Be among the first to use Magnus.</h2>
@@ -231,14 +220,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
   <footer class="site-footer">
     <div class="footer-brand">
       <a class="brand" href="#top">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="4"/>
-            <path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="currentColor"/>
-            <path d="M50 22 L54 44 L78 50 L54 56 L50 78 L46 56 L22 50 L46 44 Z" fill="#081832"/>
-          </svg>
-        </span>
-        <span>Magnus</span>
+        <?php magnus_life_planner_logo_img( 'dark', 'brand-logo' ); ?>
       </a>
       <p>Navigate your day before it starts. A personal planning app for iPhone and iPad.</p>
     </div>

@@ -2,7 +2,7 @@
 Theme Name: Magnus Life Planner
 Theme URI: https://magnuslifeplanner.wordpress.com
 Description: Landing page theme for the Magnus Life Planner app.
-Version: 1.0.1
+Version: 1.0.2
 Author: Magnus Life Planner
 Author URI: https://magnuslifeplanner.wordpress.com
 Text Domain: magnus-life-planner
@@ -61,25 +61,18 @@ a {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
   text-decoration: none;
   color: inherit;
-  font-family: Cinzel, Georgia, serif;
-  font-size: clamp(26px, 3vw, 38px);
-  font-weight: 600;
-  letter-spacing: 0.01em;
 }
 
-.brand-mark {
-  width: 48px;
-  height: 48px;
-  color: var(--gold-2);
-  display: inline-flex;
+.brand-logo {
+  display: block;
+  width: clamp(118px, 14vw, 168px);
+  height: auto;
 }
 
-.brand-mark svg {
-  width: 100%;
-  height: 100%;
+.footer-brand .brand-logo {
+  width: clamp(108px, 12vw, 148px);
 }
 
 .nav-links {
@@ -577,18 +570,15 @@ a {
 }
 
 .cta-mark {
-  width: 86px;
-  height: 86px;
-  color: var(--navy);
-  background: var(--navy);
-  border-radius: 50%;
-  padding: 12px;
+  width: auto;
+  height: auto;
+  padding: 0;
 }
 
-.cta-mark svg {
-  color: var(--gold-2);
-  width: 100%;
-  height: 100%;
+.cta-logo {
+  display: block;
+  width: clamp(108px, 12vw, 148px);
+  height: auto;
 }
 
 .cta-band h2 {
@@ -701,9 +691,8 @@ a {
 }
 
 @media (max-width: 620px) {
-  .brand-mark {
-    width: 40px;
-    height: 40px;
+  .brand-logo {
+    width: 108px;
   }
 
   .nav-links {

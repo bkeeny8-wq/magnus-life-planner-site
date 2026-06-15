@@ -22,14 +22,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 
   <header class="site-header site-header-page">
     <a class="brand" href="<?php echo $home_url; ?>" aria-label="Magnus home">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 100 100" role="img">
-          <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="4"/>
-          <path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="currentColor"/>
-          <path d="M50 22 L54 44 L78 50 L54 56 L50 78 L46 56 L22 50 L46 44 Z" fill="#081832"/>
-        </svg>
-      </span>
-      <span>Magnus</span>
+      <?php magnus_life_planner_logo_img( 'dark', 'brand-logo' ); ?>
     </a>
 
     <nav class="nav-links" aria-label="Main navigation">
@@ -60,14 +53,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
   <footer class="site-footer">
     <div class="footer-brand">
       <a class="brand" href="<?php echo $home_url; ?>">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="43" fill="none" stroke="currentColor" stroke-width="4"/>
-            <path d="M50 10 L58 42 L90 50 L58 58 L50 90 L42 58 L10 50 L42 42 Z" fill="currentColor"/>
-            <path d="M50 22 L54 44 L78 50 L54 56 L50 78 L46 56 L22 50 L46 44 Z" fill="#081832"/>
-          </svg>
-        </span>
-        <span>Magnus</span>
+        <?php magnus_life_planner_logo_img( 'dark', 'brand-logo' ); ?>
       </a>
       <p>Navigate your day before it starts. A personal planning app for iPhone and iPad.</p>
     </div>
