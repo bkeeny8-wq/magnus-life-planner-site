@@ -22,7 +22,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 
   <header class="site-header site-header-page">
     <a class="brand" href="<?php echo $home_url; ?>" aria-label="Magnus home">
-      <?php magnus_life_planner_logo_img( 'dark', 'brand-logo' ); ?>
+      <?php magnus_life_planner_logo_img( 'dark', 'brand-logo brand-logo--mark', 'mark' ); ?>
     </a>
 
     <nav class="nav-links" aria-label="Main navigation">
@@ -53,7 +53,7 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
   <footer class="site-footer">
     <div class="footer-brand">
       <a class="brand" href="<?php echo $home_url; ?>">
-        <?php magnus_life_planner_logo_img( 'dark', 'brand-logo' ); ?>
+        <?php magnus_life_planner_logo_img( 'dark', 'brand-logo brand-logo--full', 'full' ); ?>
       </a>
       <p>Navigate your day before it starts. A personal planning app for iPhone and iPad.</p>
     </div>

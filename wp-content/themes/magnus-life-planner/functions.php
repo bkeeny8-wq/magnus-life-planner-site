@@ -20,7 +20,7 @@ function magnus_life_planner_enqueue_assets() {
 		'magnus-life-planner-style',
 		get_stylesheet_uri(),
 		array( 'magnus-google-fonts' ),
-		'1.0.2'
+		'1.0.3'
 	);
 }
 add_action( 'wp_enqueue_scripts', 'magnus_life_planner_enqueue_assets' );
@@ -28,10 +28,15 @@ add_action( 'wp_enqueue_scripts', 'magnus_life_planner_enqueue_assets' );
 /**
  * Logo asset URL.
  *
- * @param string $variant Logo variant: dark (light text) or light (dark text).
+ * @param string $variant Logo variant: dark (light artwork) or light (dark artwork).
+ * @param string $type    Logo type: full (icon + wordmark) or mark (compass only).
  */
-function magnus_life_planner_logo_url( $variant = 'dark' ) {
-	$file = ( 'light' === $variant ) ? 'magnus-logo-light.png' : 'magnus-logo-dark.png';
+function magnus_life_planner_logo_url( $variant = 'dark', $type = 'full' ) {
+	if ( 'mark' === $type ) {
+		$file = ( 'light' === $variant ) ? 'magnus-mark-light.png' : 'magnus-mark-dark.png';
+	} else {
+		$file = ( 'light' === $variant ) ? 'magnus-logo-light.png' : 'magnus-logo-dark.png';
+	}
 
 	return get_template_directory_uri() . '/assets/images/' . $file;
 }
@@ -39,14 +44,21 @@ function magnus_life_planner_logo_url( $variant = 'dark' ) {
 /**
  * Render the Magnus logo image.
  *
- * @param string $variant Logo variant: dark (light text) or light (dark text).
+ * @param string $variant Logo variant: dark (light artwork) or light (dark artwork).
  * @param string $class   CSS class for the image element.
+ * @param string $type    Logo type: full (icon + wordmark) or mark (compass only).
  */
-function magnus_life_planner_logo_img( $variant = 'dark', $class = 'brand-logo' ) {
+function magnus_life_planner_logo_img( $variant = 'dark', $class = 'brand-logo', $type = 'full' ) {
+	$is_mark = ( 'mark' === $type );
+	$width   = $is_mark ? 72 : 210;
+	$height  = $is_mark ? 72 : 200;
+
 	printf(
-		'<img class="%1$s" src="%2$s" alt="%3$s" width="180" height="170" decoding="async" />',
+		'<img class="%1$s" src="%2$s" alt="%3$s" width="%4$d" height="%5$d" decoding="async" />',
 		esc_attr( $class ),
-		esc_url( magnus_life_planner_logo_url( $variant ) ),
-		esc_attr__( 'Magnus Life Planner — Your life, organized.', 'magnus-life-planner' )
+		esc_url( magnus_life_planner_logo_url( $variant, $type ) ),
+		esc_attr__( 'Magnus Life Planner — Your life, organized.', 'magnus-life-planner' ),
+		(int) $width,
+		(int) $height
 	);
 }
