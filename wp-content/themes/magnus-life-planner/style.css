@@ -2,7 +2,7 @@
 Theme Name: Magnus Life Planner
 Theme URI: https://magnuslifeplanner.wordpress.com
 Description: Landing page theme for the Magnus Life Planner app.
-Version: 1.0.3
+Version: 1.0.4
 Author: Magnus Life Planner
 Author URI: https://magnuslifeplanner.wordpress.com
 Text Domain: magnus-life-planner
@@ -240,7 +240,7 @@ a {
   font-weight: 800;
 }
 
-.compass-wrap {
+.hero-logo-wrap {
   min-height: 470px;
   display: flex;
   align-items: center;
@@ -248,112 +248,21 @@ a {
   position: relative;
 }
 
-.compass-glow {
+.hero-logo-glow {
   position: absolute;
-  width: 390px;
-  height: 390px;
+  width: min(420px, 80%);
+  aspect-ratio: 1;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(215,165,75,.24), transparent 68%);
   filter: blur(8px);
 }
 
-.compass {
-  width: clamp(300px, 40vw, 470px);
-  height: clamp(300px, 40vw, 470px);
-  border-radius: 50%;
-  background:
-    radial-gradient(circle at 36% 28%, rgba(255,255,255,.12), transparent 18%),
-    radial-gradient(circle, #122040 0%, #071224 56%, #050B17 100%);
-  border: 13px solid #4E3218;
-  box-shadow:
-    inset 0 0 0 4px #E2B65B,
-    inset 0 0 0 12px rgba(215,165,75,.25),
-    0 34px 80px rgba(0,0,0,.55);
+.hero-logo {
   position: relative;
-  transform: rotate(-10deg);
-}
-
-.compass::before {
-  content: "";
-  position: absolute;
-  inset: -22px;
-  border-radius: 50%;
-  border: 4px solid rgba(215,165,75,.38);
-}
-
-.compass-ring {
-  position: absolute;
-  inset: 42px;
-  border-radius: 50%;
-  border: 2px solid rgba(215,165,75,.5);
-}
-
-.dir {
-  position: absolute;
-  color: var(--gold-2);
-  font-family: Georgia, serif;
-  font-size: 28px;
-  font-style: italic;
-  font-weight: 700;
-}
-
-.north { top: 18px; left: 50%; transform: translateX(-50%); }
-.east { right: 22px; top: 50%; transform: translateY(-50%); }
-.south { bottom: 18px; left: 50%; transform: translateX(-50%); }
-.west { left: 22px; top: 50%; transform: translateY(-50%); }
-
-.needle-one,
-.needle-two,
-.needle-three,
-.needle-four {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform-origin: center;
-}
-
-.needle-one {
-  width: 26px;
-  height: 220px;
-  background: linear-gradient(to bottom, #F8F1E6 0 50%, #B77B28 50% 100%);
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.needle-two {
-  width: 18px;
-  height: 190px;
-  background: linear-gradient(to bottom, #D7A54B 0 50%, #F8F1E6 50% 100%);
-  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-
-.needle-three {
-  width: 18px;
-  height: 190px;
-  background: rgba(215,165,75,.9);
-  clip-path: polygon(50% 0, 85% 50%, 50% 100%, 15% 50%);
-  transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.needle-four {
-  width: 18px;
-  height: 190px;
-  background: rgba(248,241,230,.86);
-  clip-path: polygon(50% 0, 85% 50%, 50% 100%, 15% 50%);
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
-.compass-center {
-  position: absolute;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: radial-gradient(circle, #F5D27F, #A96E24);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 6px rgba(3,8,18,.9), 0 0 0 10px rgba(215,165,75,.5);
+  z-index: 2;
+  width: clamp(280px, 36vw, 420px);
+  height: auto;
+  filter: drop-shadow(0 28px 70px rgba(0,0,0,.45));
 }
 
 .features-band {
@@ -670,8 +579,12 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .compass-wrap {
+  .hero-logo-wrap {
     min-height: 360px;
+  }
+
+  .hero-logo {
+    width: min(320px, 78vw);
   }
 
   .feature-grid {
@@ -721,23 +634,8 @@ a {
     font-size: 48px;
   }
 
-  .compass {
-    width: 280px;
-    height: 280px;
-  }
-
-  .compass-ring {
-    inset: 30px;
-  }
-
-  .needle-one {
-    height: 145px;
-  }
-
-  .needle-two,
-  .needle-three,
-  .needle-four {
-    height: 128px;
+  .hero-logo {
+    width: min(260px, 84vw);
   }
 
   .feature-grid {

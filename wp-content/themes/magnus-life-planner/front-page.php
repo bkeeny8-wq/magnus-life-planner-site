@@ -53,21 +53,9 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
           <p class="hero-note"><span aria-hidden="true">⚓</span> Currently in beta · iOS · TestFlight</p>
         </div>
 
-        <div class="compass-wrap" aria-label="Compass illustration">
-          <div class="compass-glow"></div>
-          <div class="compass">
-            <div class="compass-ring">
-              <span class="dir north">N</span>
-              <span class="dir east">E</span>
-              <span class="dir south">S</span>
-              <span class="dir west">W</span>
-              <div class="needle needle-one"></div>
-              <div class="needle needle-two"></div>
-              <div class="needle needle-three"></div>
-              <div class="needle needle-four"></div>
-              <div class="compass-center"></div>
-            </div>
-          </div>
+        <div class="hero-logo-wrap" aria-label="Magnus logo">
+          <div class="hero-logo-glow" aria-hidden="true"></div>
+          <?php magnus_life_planner_logo_img( 'dark', 'hero-logo brand-logo--full', 'full' ); ?>
         </div>
       </div>
     </section>
