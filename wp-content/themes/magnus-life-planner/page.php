@@ -1,6 +1,6 @@
 <?php
 /**
- * Page template for legal and content pages.
+ * Page template for legal and content pages (Daylight identity).
  *
  * @package Magnus_Life_Planner
  */
@@ -21,16 +21,13 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 <?php wp_body_open(); ?>
 
   <header class="site-header site-header-page">
-    <a class="brand" href="<?php echo $home_url; ?>" aria-label="Magnus home">
-      <?php magnus_life_planner_logo_img( 'dark', 'brand-logo brand-logo--mark', 'mark' ); ?>
-    </a>
-
+    <a class="brand" href="<?php echo $home_url; ?>" aria-label="Magnus home"><?php magnus_life_planner_brand(); ?></a>
     <nav class="nav-links" aria-label="Main navigation">
       <a href="<?php echo esc_url( $home_url . '#features' ); ?>">Features</a>
       <a href="<?php echo esc_url( $home_url . '#how-it-works' ); ?>">How it works</a>
-      <a href="<?php echo $privacy_url; ?>">Privacy Policy</a>
-      <a href="<?php echo $terms_url; ?>">Terms of Service</a>
-      <a class="nav-cta" href="mailto:bkeeny8@gmail.com?subject=Magnus%20beta%20access">Beta Access</a>
+      <a href="<?php echo $privacy_url; ?>">Privacy</a>
+      <a href="<?php echo $terms_url; ?>">Terms</a>
+      <a class="nav-cta" href="mailto:bkeeny8@gmail.com?subject=Magnus%20beta%20access">Get early access</a>
     </nav>
   </header>
 
@@ -40,9 +37,9 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
       the_post();
       ?>
       <article <?php post_class( 'page-content' ); ?>>
-        <p class="eyebrow eyebrow-dark">Magnus Life Planner</p>
+        <p class="eyebrow">Magnus</p>
         <h1><?php the_title(); ?></h1>
-        <div class="gold-rule"></div>
+        <div class="rule"></div>
         <div class="page-body">
           <?php the_content(); ?>
         </div>
@@ -52,31 +49,25 @@ $terms_url   = esc_url( home_url( '/terms-of-service/' ) );
 
   <footer class="site-footer">
     <div class="footer-brand">
-      <a class="brand" href="<?php echo $home_url; ?>">
-        <?php magnus_life_planner_logo_img( 'dark', 'brand-logo brand-logo--full', 'full' ); ?>
-      </a>
-      <p>Navigate your day before it starts. A personal planning app for iPhone and iPad.</p>
+      <a class="brand" href="<?php echo $home_url; ?>"><?php magnus_life_planner_brand(); ?></a>
+      <p>One calm view of your whole day. A personal planner for iPhone and iPad.</p>
     </div>
-
-    <div class="footer-column">
+    <div class="footer-col">
       <h4>Product</h4>
       <a href="<?php echo esc_url( $home_url . '#features' ); ?>">Features</a>
       <a href="<?php echo esc_url( $home_url . '#how-it-works' ); ?>">How it works</a>
     </div>
-
-    <div class="footer-column">
+    <div class="footer-col">
       <h4>Legal</h4>
-      <a href="<?php echo $privacy_url; ?>">Privacy Policy</a>
-      <a href="<?php echo $terms_url; ?>">Terms of Service</a>
+      <a href="<?php echo $privacy_url; ?>">Privacy</a>
+      <a href="<?php echo $terms_url; ?>">Terms</a>
     </div>
-
-    <div class="footer-column">
+    <div class="footer-col">
       <h4>Contact</h4>
-      <a href="mailto:bkeeny8@gmail.com">Contact Support</a>
+      <a href="mailto:bkeeny8@gmail.com">Support</a>
       <a href="mailto:bkeeny8@gmail.com">bkeeny8@gmail.com</a>
     </div>
-
-    <div class="footer-bottom">© <?php echo esc_html( gmdate( 'Y' ) ); ?> Magnus Life Planner. All rights reserved.</div>
+    <div class="footer-bottom">© <?php echo esc_html( gmdate( 'Y' ) ); ?> Magnus. All rights reserved.</div>
   </footer>
 
 <?php wp_footer(); ?>

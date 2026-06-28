@@ -1,6 +1,6 @@
 <?php
 /**
- * Magnus Life Planner theme functions.
+ * Magnus Life Planner theme functions (Calm & Balanced identity).
  */
 
 function magnus_life_planner_setup() {
@@ -11,7 +11,7 @@ add_action( 'after_setup_theme', 'magnus_life_planner_setup' );
 function magnus_life_planner_enqueue_assets() {
 	wp_enqueue_style(
 		'magnus-google-fonts',
-		'https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap',
 		array(),
 		null
 	);
@@ -20,45 +20,39 @@ function magnus_life_planner_enqueue_assets() {
 		'magnus-life-planner-style',
 		get_stylesheet_uri(),
 		array( 'magnus-google-fonts' ),
-		'1.0.5'
+		'2.1.0'
 	);
 }
 add_action( 'wp_enqueue_scripts', 'magnus_life_planner_enqueue_assets' );
 
-/**
- * Logo asset URL.
- *
- * @param string $variant Logo variant: dark (light artwork) or light (dark artwork).
- * @param string $type    Logo type: full (icon + wordmark) or mark (compass only).
- */
-function magnus_life_planner_logo_url( $variant = 'dark', $type = 'full' ) {
-	if ( 'mark' === $type ) {
-		$file = ( 'light' === $variant ) ? 'magnus-mark-light.png' : 'magnus-mark-dark.png';
-	} else {
-		$file = ( 'light' === $variant ) ? 'magnus-logo-light.png' : 'magnus-logo-dark.png';
-	}
+function magnus_life_planner_favicons() {
+	$asset_url = trailingslashit( get_template_directory_uri() ) . 'assets/images/';
+	echo '<link rel="icon" href="' . esc_url( $asset_url . 'favicon.svg' ) . '" type="image/svg+xml">' . "\n";
+	echo '<link rel="icon" href="' . esc_url( $asset_url . 'favicon-32.png' ) . '" sizes="32x32">' . "\n";
+	echo '<link rel="apple-touch-icon" href="' . esc_url( $asset_url . 'apple-touch-icon-180.png' ) . '">' . "\n";
+}
+add_action( 'wp_head', 'magnus_life_planner_favicons' );
 
-	return get_template_directory_uri() . '/assets/images/' . $file;
+/**
+ * Render the mark as inline SVG (Calm Blue arc, Warm Coral sun). No image assets.
+ *
+ * @param int $size Pixel size of the square mark.
+ */
+function magnus_life_planner_mark( $size = 34 ) {
+	printf(
+		'<svg class="brand-mark" width="%1$d" height="%1$d" viewBox="0 0 52 52" fill="none" aria-hidden="true">'
+		. '<rect x="1" y="1" width="50" height="50" rx="14" fill="#E6EEF3"/>'
+		. '<path d="M7.9 27.8 A21.3 21.3 0 0 1 37.3 21" stroke="#457B9D" stroke-width="1.8" stroke-linecap="round"/>'
+		. '<line x1="10" y1="34.1" x2="42" y2="34.1" stroke="#2D3A42" stroke-width="1.8" stroke-linecap="round"/>'
+		. '<circle cx="37.3" cy="21" r="3.6" fill="#FF8C42"/></svg>',
+		(int) $size
+	);
 }
 
 /**
- * Render the Magnus logo image.
- *
- * @param string $variant Logo variant: dark (light artwork) or light (dark artwork).
- * @param string $class   CSS class for the image element.
- * @param string $type    Logo type: full (icon + wordmark) or mark (compass only).
+ * Brand lockup: mark plus the Magnus wordmark.
  */
-function magnus_life_planner_logo_img( $variant = 'dark', $class = 'brand-logo', $type = 'full' ) {
-	$is_mark = ( 'mark' === $type );
-	$width   = $is_mark ? 72 : 210;
-	$height  = $is_mark ? 72 : 200;
-
-	printf(
-		'<img class="%1$s" src="%2$s" alt="%3$s" width="%4$d" height="%5$d" decoding="async" />',
-		esc_attr( $class ),
-		esc_url( magnus_life_planner_logo_url( $variant, $type ) ),
-		esc_attr__( 'Magnus Life Planner — Your life, organized.', 'magnus-life-planner' ),
-		(int) $width,
-		(int) $height
-	);
+function magnus_life_planner_brand( $size = 34 ) {
+	magnus_life_planner_mark( $size );
+	echo '<span class="brand-word">Magnus</span>';
 }
