@@ -20,10 +20,29 @@ function magnus_life_planner_enqueue_assets() {
 		'magnus-life-planner-style',
 		get_stylesheet_uri(),
 		array( 'magnus-google-fonts' ),
-		'2.1.0'
+		'2.1.1'
 	);
 }
 add_action( 'wp_enqueue_scripts', 'magnus_life_planner_enqueue_assets' );
+
+/**
+ * Force the theme's front-page.php for the site front page.
+ *
+ * On WordPress.com the homepage can be set to a static Page (or a page
+ * builder layout) whose stored content masks the theme template. This
+ * guarantees our hardcoded landing always renders on the front page,
+ * regardless of the Reading settings.
+ */
+function magnus_life_planner_force_front_page( $template ) {
+	if ( is_front_page() ) {
+		$front = locate_template( 'front-page.php' );
+		if ( $front ) {
+			return $front;
+		}
+	}
+	return $template;
+}
+add_filter( 'template_include', 'magnus_life_planner_force_front_page', 99 );
 
 function magnus_life_planner_favicons() {
 	$asset_url = trailingslashit( get_template_directory_uri() ) . 'assets/images/';
